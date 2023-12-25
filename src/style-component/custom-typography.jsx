@@ -2,13 +2,12 @@ import { Typography, styled } from "@mui/material";
 
 
 export const CustomTypography = styled(Typography)(({ size }) => ({
-   fontSize: (size === 'sm' && "23px") || (size === 'ext-sm' && "19px") || (size === 'md' && "36px") || (size === 'lg' && "50px") || '10px',
+   fontSize: (size === 'x-sm' && "15px") || (size === 'sm' && "19px") || (size === 'md' && "22px") || (size === 'lg' && "27px") || (size === 'x-lg' && "36px") || (size === 'xx-lg' && "40px"),
    fontWeight: 600,
-   // '&:hover': {
-   //    fontSize: '60px'
-   // }
+   display: 'inline-block'
 }));
 
-export const CustomTypographyUnderline = styled(Typography)(({ underline }) => ({
-   textDecoration: 'underline',
-}))
+// export const CustomTypographyUnderline = styled(Typography)(({ underline }) => ({
+//    borderBottom: (underline === 'lg-underline' && '2px solid black'),
+//    width: (underline === 'lg-underline' && '100px'),
+// }))
