@@ -29,7 +29,7 @@ const CustomTypographyUnderline = styled(Typography)(({ underline }) => ({
 
 const HeadingLink = styled(Link)(({ href }) => ({
    cursor: href ? 'pointer' : 'auto',
-   color: href ? 'black' : 'black',
+   color: href ? 'black' : 'black' || '#fff',
    textDecoration: 'none',
 }))
 
