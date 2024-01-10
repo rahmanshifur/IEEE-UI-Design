@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const CustomHeading = ({ size, headingText, underline, href }) => {
    return (
-      <Box>
+      <Box sx={{ margin: "4px 0px" }}>
          <HeadingLink to={href ? href : ''} href={href}>
             <CustomTypography size={size}>{headingText}</CustomTypography></HeadingLink>
          <CustomTypographyUnderline underline={underline} />
@@ -22,8 +22,8 @@ const CustomTypography = styled(Typography)(({ size }) => ({
 }));
 
 const CustomTypographyUnderline = styled(Typography)(({ underline }) => ({
-   borderBottom: '4.2px solid #FFCC13',
-   width: (underline === 'md-underline' && "10%") || (underline === 'lg-underline' && "18%") || (underline === 'sm-underline' && "4%") || '50%',
+   borderBottom: (underline ? '4.2px solid #FFCC13' : ''),
+   width: (underline === 'md-underline' && "10%") || (underline === 'lg-underline' && "18%") || (underline === 'sm-underline' && "4%"),
    margin: (underline === 'lg-underline' && 'auto'),
 }))
 
@@ -31,19 +31,7 @@ const HeadingLink = styled(Link)(({ href }) => ({
    cursor: href ? 'pointer' : 'auto',
    color: href ? 'black' : 'black' || '#fff',
    textDecoration: 'none',
+   ":hover": {
+      color: (href ? '#23527c' : '')
+   }
 }))
-
-
-//    backgroundColor: "#F7F9FF",
-//    height: "auto",
-//    [theme.breakpoints.up("sm")]: {
-//      width: "574px",
-//      padding: "60px",
-//    },
-//    [theme.breakpoints.down("sm")]: {
-//      width: "100%",
-//      padding: "15px",
-//    },
-//    borderRadius: "10px",
-//    textAlign: "center",
-//  }));

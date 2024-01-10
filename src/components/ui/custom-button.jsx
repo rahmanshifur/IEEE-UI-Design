@@ -11,7 +11,7 @@ const CustomButton = (props) => {
 
 export default CustomButton;
 
-const BtnLink = styled(Link)(({ props: { color, size } }) => ({
+const BtnLink = styled(Link)(({ props: { color } }) => ({
    textDecoration: 'none',
    color: (color === 'white' && "#fff") || (color === 'black' && "#000") || "#000000",
    backgroundColor: (color === 'black' && '#FFC936') || (color === 'white' && '#222222') || '#fff',
