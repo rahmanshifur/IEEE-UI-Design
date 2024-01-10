@@ -1,4 +1,4 @@
-import { Box } from "@mui/material"
+import { Box, Container } from "@mui/material"
 import FeatureEvent from "../../components/feature-event"
 import CustomButton from "../../components/ui/custom-button"
 import CustomHeading from "../../components/ui/custom-heading"
@@ -19,9 +19,9 @@ const HomePage = () => {
          <CustomButton btnText={'See All News'} color={'black'} />
 
          <CustomSummary summary={shortText('Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, commodi impedit! Eum quae aut sapiente ex corporis inventore amet molestias!', 70)} />
-         <Box>
+         <Container>
             <FeatureEvent />
-         </Box>
+         </Container>
       </Box>
    )
 }

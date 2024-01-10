@@ -11,13 +11,11 @@ import CustomHeading from '../ui/custom-heading';
 
 const CardItem = ({ headingText, size, href, img, btnClr, btnSize, btnBgClr, btnHref, icon }) => {
    return (
-      <Card
-         sx={{ maxWidth: 335, textAlign: (icon ? 'center' : '') }} >
+      <CardItems
+         cardsx={{ icon, btnSize }}>
          {img && <ImgCard
             image={img}
-         // title="green iguana"
          />}
-
          <ContentCard icon={icon}>
             <Typography >{icon}</Typography>
             <CustomHeading headingText={headingText} size={size} href={href} />
@@ -28,15 +26,25 @@ const CardItem = ({ headingText, size, href, img, btnClr, btnSize, btnBgClr, btn
          </ContentCard>
          <CardActions sx={{ paddingLeft: '15px', paddingBottom: '20px' }}>
             {btnHref &&
-               <BtnCard href={btnHref} size={'small'} btnClr={{ btnClr, btnSize, btnBgClr }}>Read More</BtnCard>}
+               <BtnCard
+                  href={btnHref}
+                  size={'small'}
+                  btnClr={{ btnClr, btnSize, btnBgClr }}>Read More</BtnCard>}
          </CardActions>
 
-      </Card >
+      </CardItems >
    )
 }
 
 export default CardItem
 
+const CardItems = styled(Card)(({ cardsx: { icon, btnSize } }) => ({
+   maxWidth: 345,
+   textAlign: (icon ? 'center' : ''),
+   borderRadius: (btnSize ? '15px' : ''),
+   boxShadow: (btnSize ? '0px 0px 10px 0px rgba(0,0,0,0.5)' : ''),
+
+}))
 const ImgCard = styled(CardMedia)(() => ({
    height: '250px',
 
@@ -57,12 +65,12 @@ const BtnCard = styled(Link)(({ btnClr: { btnClr, btnSize, btnBgClr } }) => ({
    padding: (btnSize === 'md' && '15px 25px') || '0px',
    color: (btnClr === 'white' && '#fff') || (btnClr === 'black' && '#000') || (btnClr === 'green' && '#61ce70') || '#000',
    background: (btnBgClr === 'primary' && '#3381B1') || (btnBgClr === 'light' && '#fff'),
-   border: '1px solid #fff',
-   borderRadius: '5px',
+   border: (btnSize ? '1px solid #fff' : ''),
+   borderRadius: (btnSize ? '5px' : ''),
    ':hover': {
       color: (btnSize ? '#000' : ''),
       background: (btnSize ? '#fff' : ''),
-      border: '1px solid #000'
+      border: (btnSize ? '1px solid #000' : ''),
    }
 
 }))
