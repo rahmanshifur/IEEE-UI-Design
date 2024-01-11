@@ -1,15 +1,17 @@
+
+
 import { Box } from "@mui/material";
-import EventImg1 from '../../assets/feature-event-img/img1.jpg';
-import EventIm2 from '../../assets/feature-event-img/img2.jpg';
-import EventImg3 from '../../assets/feature-event-img/img3.jpg';
+import BlogImg1 from '../../assets/feature-bolog-img/img1.png';
+import BlogImg2 from '../../assets/feature-bolog-img/img2.png';
+import BlogImg3 from '../../assets/feature-bolog-img/img3.png';
 import CardItem from "../reuseable/card";
 import CustomButton from "../ui/custom-button";
 import CustomHeading from '../ui/custom-heading';
 
-const FeatureEvent = () => (
-   <Box sx={{}}>
+const FeatureBlogs = () => (
+   <Box>
       <Box textAlign={'center'} padding={'20px 0px'}><CustomHeading
-         headingText={'Featured Events'}
+         headingText={'Featured Blogs'}
          size={'x-lg'}
          underline={'lg-underline'}
       /></Box>
@@ -18,10 +20,8 @@ const FeatureEvent = () => (
             <CardItem
                headingText={'3D Point Cloud Object Recognition'}
                size={'md'}
-               img={EventImg1}
-               btnClr='white'
-               btnSize='md'
-               btnBgClr={'primary'}
+               img={BlogImg1}
+               btnClr='green'
                btnHref={'/d'}
             />
          </Box>
@@ -29,10 +29,8 @@ const FeatureEvent = () => (
             <CardItem
                headingText={'3D Point Cloud Object Recognition'}
                size={'md'}
-               img={EventIm2}
-               btnClr='white'
-               btnSize='md'
-               btnBgClr={'primary'}
+               img={BlogImg2}
+               btnClr='green'
                btnHref={'/d'}
             />
          </Box>
@@ -40,19 +38,25 @@ const FeatureEvent = () => (
             <CardItem
                headingText={'3D Point Cloud Object Recognition'}
                size={'md'}
-               img={EventImg3}
-               btnClr='white'
-               btnSize='md'
-               btnBgClr={'primary'}
+               img={BlogImg3}
+               btnClr='green'
                btnHref={'/d'}
             />
          </Box>
       </Box>
       <Box sx={{ textAlign: 'center', padding: '50px 0px 0px 0px' }}><CustomButton
-         btnText={'See All Events'}
+         btnText={'See other Blogs'}
          color='white'
       /></Box>
+      {/* <CardItem
+         headingText={'3D Point Cloud Object Recognition'}
+         size={'md'}
+         img={EventImg2}
+         btnClr='green'
+         btnHref={'/a'}
+         href={'/aa'}
+      /> */}
    </Box >
 )
 
-export default FeatureEvent
+export default FeatureBlogs

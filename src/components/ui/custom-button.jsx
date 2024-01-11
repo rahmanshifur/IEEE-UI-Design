@@ -21,6 +21,7 @@ const BtnLink = styled(Link)(({ props: { color } }) => ({
    boxShadow: '0px 0px 10px -3px rgba(0,0,0,0.5)',
    borderRadius: '5px',
    padding: '12px 25px',
-   lineHeight: 1
+   lineHeight: 1,
+   letterSpacing: 1,
 }))
 

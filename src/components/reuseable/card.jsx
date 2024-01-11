@@ -64,9 +64,10 @@ const BtnCard = styled(Link)(({ btnClr: { btnClr, btnSize, btnBgClr } }) => ({
    textDecoration: 'none',
    padding: (btnSize === 'md' && '15px 25px') || '0px',
    color: (btnClr === 'white' && '#fff') || (btnClr === 'black' && '#000') || (btnClr === 'green' && '#61ce70') || '#000',
-   background: (btnBgClr === 'primary' && '#3381B1') || (btnBgClr === 'light' && '#fff'),
+   background: (btnSize ? (btnBgClr === 'primary' && '#3381B1') || (btnBgClr === 'light' && '#fff') : ''),
    border: (btnSize ? '1px solid #fff' : ''),
    borderRadius: (btnSize ? '5px' : ''),
+   letterSpacing: 1,
    ':hover': {
       color: (btnSize ? '#000' : ''),
       background: (btnSize ? '#fff' : ''),
