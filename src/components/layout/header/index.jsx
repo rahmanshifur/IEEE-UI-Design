@@ -128,7 +128,7 @@ const Menu = [
    },
    {
       name: 'get Involved',
-      class: { backgroundColor: '#13aff0', color: '#fff', padding: '10px 22px', borderRadius: '5px' },
+      class: { backgroundColor: '#13aff0', color: '#fff', padding: '10px 22px', borderRadius: '5px', borderBottom: '0px' },
       submenu: [
          {
             name: 'Events',
@@ -155,14 +155,14 @@ const Header = () => {
                   <a href='/'><img style={{ width: '50px', display: 'block' }} src={Logo} /></a>
                </Box>
                <Mainmenu>
-                  {Menu.map((item) => <MainmenuList >
+                  {Menu.map((item) => <MainmenuList subMenu={item.submenu}>
                      <MainmenuLink style={item.class} to={item.url}>{item.name}</MainmenuLink>
 
-                     <Submenu >
+                     <Submenu className='sub-menu-ul' >
                         {item.submenu?.map((item) => <SubmenuList><SubmenuLink to={item.url}>{item.name}</SubmenuLink> </SubmenuList>)}
                      </Submenu>
                   </MainmenuList>)}
-                  <Box paddingLeft={'20px'}>
+                  <Box>
                      <SearchBar
                         placeholder='Search..'
                         startAdornment={<InputAdornment position="start"><SearchIcon style={{ color: "#fff" }} /></InputAdornment>}
@@ -182,89 +182,71 @@ const BoxWraper = styled(Box)(() => ({
    backgroundColor: '#141414',
 }))
 const Mainmenu = styled('ul')(() => ({
-   display: 'flex',
-   flexDirection: 'row',
    listStyle: 'none',
-   padding: '0',
-   margin: '0',
-   alignItems: 'center',
-   ':hover': {
-      // color: '#fcb900'
-   }
-
-}))
-const MainmenuList = styled('li')(({ }) => ({
    display: 'flex',
-   flexDirection: 'column',
-   position: 'relative',
-   padding: "12px 20px",
-
-   '& .css-fy1tyv': {
-      display: 'none ',
-      zIndex: '100'
-   },
+   alignItems: 'center',
+   gap: '20px',
+   margin: '0',
+   padding: '0',
+}))
+const MainmenuList = styled('li')(({ subMenu }) => ({
+   position: (subMenu ? 'relative' : ''),
+   padding: '18px 10px',
    ':hover': {
-      '& .css-fy1tyv': {
+      '.sub-menu-ul': {
          display: 'block',
-         borderColor: '#D4CDCD',
-         boxShadow: '2px 1px rgba(0, 0, 0, 0.2)'
+         transition: 'all .5s'
+
       }
-   },
+   }
 }))
 const MainmenuLink = styled(Link)(() => ({
-   display: 'block',
    textDecoration: 'none',
    color: 'white',
    fontSize: '14px',
    fontWeight: '600',
-   ":hover": {
-      color: '#ffc938',
-      borderBottom: '2px solid #ffc938 ',
-      '-webkit-transition': 'all .25s ease-out',
-      // transform: translateY('-10px')
+   borderBottom: '2px solid transparent ',
 
-   },
+   ':hover': {
+      paddingBottom: '6px',
+      borderBottom: '2px solid #ffc938 ',
+      color: '#ffc938',
+      transition: 'all .2s'
+   }
 }))
+
 // Sub menu
 const Submenu = styled('ul')(() => ({
-   display: 'flex',
-   flexDirection: 'column',
-   listStyle: 'none',
-   padding: '0',
    position: 'absolute',
-   top: '99%',
-   left: '0',
-   minWidth: "200px",
+   background: '#fff',
+   listStyle: 'none',
+   minWidth: '200px',
+   color: '#333',
    margin: '0',
+   padding: '0',
+   top: '100%',
+   left: '0',
+   display: 'none',
+   zIndex: '100',
+   boxShadow: '1px 2px 6px rgba(0,0,0,.1)',
+   borderTop: '3px solid #ffc938'
 
 }))
 const SubmenuList = styled('li')(() => ({
-   display: 'flex',
-   flexDirection: 'column',
-   background: 'rgba(0,0,0,0)',
-   position: 'relative',
-
-   ':last-child': {
-      '.css-tfg8d7': {
-         borderBottom: 'none',
-      }
+   borderBottom: '1px solid #f2f0f0',
+   ':hover': {
+      background: '#ffc938',
    },
+   ':last-child': {
+      borderBottom: "0px"
+   }
+
 }))
 const SubmenuLink = styled(Link)(() => ({
-   display: 'block',
    textDecoration: 'none',
-   color: '#555',
-   padding: "12px 16px",
-   fontSize: '16px',
-   fontWeight: 400,
-   textTransform: 'capitalize',
-   borderBottom: '1px solid #585858',
-   borderColor: '#D4CDCD',
-   fontFamily: 'inherit',
-   ":hover": {
-      color: '#333',
-      backgroundColor: "#ffc938"
-   }
+   padding: '10px 20px',
+   display: 'inline-block',
+   color: '#333'
 }))
 
 const SearchBar = styled(OutlinedInput)(({ theme }) => ({
@@ -286,3 +268,4 @@ const SearchBar = styled(OutlinedInput)(({ theme }) => ({
       },
    },
 }));
+

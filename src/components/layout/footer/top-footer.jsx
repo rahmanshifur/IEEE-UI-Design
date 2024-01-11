@@ -32,7 +32,7 @@ const TopFooter = () => {
             <Box sx={{ display: 'flex', justifyContent: "space-between", alignItems: 'center' }} >
                <Box item lg={6} >
                   {Items.map((item) =>
-                     <LinkItems>
+                     <LinkItems href={item.url}>
                         {item.name}
                      </LinkItems>
                   )}
