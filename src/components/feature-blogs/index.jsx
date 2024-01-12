@@ -23,6 +23,7 @@ const FeatureBlogs = () => (
                img={BlogImg1}
                btnClr='green'
                btnHref={'/d'}
+               href={'##'}
             />
          </Box>
          <Box sx={{ borderRadius: '15px', padding: '0px 20px' }}>
@@ -32,6 +33,8 @@ const FeatureBlogs = () => (
                img={BlogImg2}
                btnClr='green'
                btnHref={'/d'}
+               href={'##'}
+
             />
          </Box>
          <Box sx={{ borderRadius: '15px', padding: '0px 20px' }}>
@@ -41,6 +44,7 @@ const FeatureBlogs = () => (
                img={BlogImg3}
                btnClr='green'
                btnHref={'/d'}
+               href={'##'}
             />
          </Box>
       </Box>
