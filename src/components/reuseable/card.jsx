@@ -1,5 +1,6 @@
 
-import { Link, styled } from '@mui/material';
+import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
+import { Box, Link, styled } from '@mui/material';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
@@ -8,16 +9,24 @@ import Typography from '@mui/material/Typography';
 import CustomHeading from '../ui/custom-heading';
 
 
-
 const CardItem = ({ headingText, size, href, img, btnClr, btnSize, btnBgClr, btnHref, icon }) => {
    return (
       <CardItems
          cardsx={{ icon, btnSize }}>
-         {img && <ImgCard
-            image={img}
-         />}
+         {img &&
+            <ImgLink href={href ? href : ''}>
+               <ImgCard
+                  image={img}
+               />
+               {href && <HoverArrowIcon className='hoverIcon'>
+                  <ArrowRightAltIcon fontSize='large' sx={{
+                     color: '#fff',
+                  }} />
+               </HoverArrowIcon>}
+
+            </ImgLink>}
          <ContentCard icon={icon}>
-            <Typography >{icon}</Typography>
+            {icon && <Typography >{icon}</Typography>}
             <CustomHeading headingText={headingText} size={size} href={href} />
             <Typography variant="body2" btnClr="text.secondary">
                Lizards are a widespread group of squamate reptiles, with over 6,000
@@ -45,8 +54,37 @@ const CardItems = styled(Card)(({ cardsx: { icon, btnSize } }) => ({
    boxShadow: (btnSize ? '0px 0px 10px 0px rgba(0,0,0,0.5)' : ''),
 
 }))
+const HoverArrowIcon = styled(Box)(({ }) => ({
+   background: '#000000ad',
+   height: "100%",
+   width: "0",
+   margin: 'auto',
+   display: 'flex',
+   justifyContent: 'center',
+   alignItems: 'center',
+   overflow: 'hidden',
+   top: '0',
+   left: '0',
+   // right: '0',
+   bottom: '0',
+   position: 'absolute',
+   opacity: '0',
+   transition: 'all .5s',
+
+}))
+const ImgLink = styled(Link)(() => ({
+   position: 'relative',
+   ':hover': {
+      '& .hoverIcon ': {
+         opacity: "1",
+         width: "100%",
+      }
+   },
+}))
 const ImgCard = styled(CardMedia)(() => ({
    height: '250px',
+
+
 
 }))
 const ContentCard = styled(CardContent)(({ icon }) => ({
