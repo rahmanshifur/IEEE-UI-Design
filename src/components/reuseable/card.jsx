@@ -114,6 +114,7 @@ const BtnCard = styled(Link)(({ btnClr: { btnClr, btnSize, btnBgClr } }) => ({
    letterSpacing: 1,
    ':hover': {
       color: (btnSize ? '#000' : ''),
+      background: (btnSize ? '#fff' : ''),
       border: (btnSize ? '1px solid #000' : ''),
    }
 

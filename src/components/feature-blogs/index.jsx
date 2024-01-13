@@ -1,6 +1,6 @@
 
 
-import { Box } from "@mui/material";
+import { Box, Container } from "@mui/material";
 import BlogImg1 from '../../assets/feature-bolog-img/img1.png';
 import BlogImg2 from '../../assets/feature-bolog-img/img2.png';
 import BlogImg3 from '../../assets/feature-bolog-img/img3.png';
@@ -9,7 +9,7 @@ import CustomButton from "../ui/custom-button";
 import CustomHeading from '../ui/custom-heading';
 
 const FeatureBlogs = () => (
-   <Box>
+   <Container>
       <Box textAlign={'center'} padding={'20px 0px'}><CustomHeading
          headingText={'Featured Blogs'}
          size={'x-lg'}
@@ -60,7 +60,7 @@ const FeatureBlogs = () => (
          btnHref={'/a'}
          href={'/aa'}
       /> */}
-   </Box >
+   </Container >
 )
 
 export default FeatureBlogs

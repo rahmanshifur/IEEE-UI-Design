@@ -1,12 +1,12 @@
 
 import CastForEducationIcon from '@mui/icons-material/CastForEducation';
-import { Box, styled } from "@mui/material";
+import { Box, Container, styled } from "@mui/material";
 import CardItem from "../reuseable/card";
 import CustomButton from "../ui/custom-button";
 import CustomHeading from '../ui/custom-heading';
 
 const WhatWeDo = () => (
-   <Box sx={{}}>
+   <Container>
       <Box textAlign={'center'} padding={'20px 0px'} margin={'12px 0px'}><CustomHeading
          headingText={'What We Do'}
          size={'x-lg'}
@@ -33,6 +33,27 @@ const WhatWeDo = () => (
                icon={<Icon />}
             />
          </Box>
+         {/* <Box sx={{ borderRadius: '15px', padding: '0px 20px' }}>
+            <CardItem
+               headingText={'3D Point Cloud Object Recognition'}
+               size={'md'}
+               icon={<Icon />}
+            />
+         </Box>
+         <Box sx={{ borderRadius: '15px', padding: '0px 20px' }}>
+            <CardItem
+               headingText={'3D Point Cloud Object Recognition'}
+               size={'md'}
+               icon={<Icon />}
+            />
+         </Box>
+         <Box sx={{ borderRadius: '15px', padding: '0px 20px' }}>
+            <CardItem
+               headingText={'3D Point Cloud Object Recognition'}
+               size={'md'}
+               icon={<Icon />}
+            />
+         </Box> */}
       </Box>
       <BtnAction>
          <CustomButton
@@ -42,7 +63,7 @@ const WhatWeDo = () => (
             btnText={'Know more about IEEE NSU SB'}
          />
       </BtnAction>
-   </Box >
+   </Container>
 )
 
 export default WhatWeDo
