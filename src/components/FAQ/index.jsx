@@ -21,26 +21,27 @@ const Accordion = styled((props) => (
 }));
 
 const AccordionSummary = styled((props) => (
-   <MuiAccordionSummary sx={{ background: 'transparent' }}
+   <MuiAccordionSummary 
       expandIcon={<ArrowForwardIosSharpIcon sx={{ fontSize: '0.9rem' }} />}
       {...props}
    />
 ))(({ theme }) => ({
-   // backgroundColor: 'red',
+   minHeight:'30px' ,
    flexDirection: 'row-reverse',
    '& .MuiAccordionSummary-expandIconWrapper.Mui-expanded': {
       transform: 'rotate(90deg)',
-
    },
    '& .MuiAccordionSummary-content': {
       marginLeft: theme.spacing(1),
-
+      margin:'0',
    },
 }));
 
 const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
    padding: theme.spacing(2),
    borderTop: '1px solid rgba(0, 0, 0, .125)',
+   color:'#fff',
+   
 }));
 
 
@@ -74,10 +75,10 @@ const FAQSection = () => {
                   />
                   <Box>
                      <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')} sx={{ background: 'transparent', border: 'none' }}>
-                        <AccordionSummary aria-controls="panel1d-content" id="panel1d-header" sx={{ background: '#fff', borderRadius: '5px' }}>
+                        <AccordionSummary aria-controls="panel1d-content" id="panel1d-header" sx={{ background: '#fff', borderRadius: '5px'}}>
                            <Typography>Collapsible Group Item #1</Typography>
                         </AccordionSummary>
-                        <AccordionDetails sx={{ border: '0' }}>
+                        <AccordionDetails>
                            <Typography>
                               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
                               malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum dolor
