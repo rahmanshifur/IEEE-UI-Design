@@ -7,7 +7,7 @@ const CustomHeading = ({ size, headingText, underline, href }) => {
    return (
       <Box sx={{ margin: "4px 0px" }}>
          <HeadingLink to={href ? href : ''} href={href}>
-            <CustomTypography size={size}>{headingText}</CustomTypography></HeadingLink>
+            <CustomTypography className="headding" size={size}>{headingText}</CustomTypography></HeadingLink>
          <CustomTypographyUnderline underline={underline} />
       </Box>
    )

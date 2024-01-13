@@ -28,9 +28,10 @@ const CardItem = ({ headingText, size, href, img, btnClr, btnSize, btnBgClr, btn
          <ContentCard icon={icon}>
             {icon && <Typography >{icon}</Typography>}
             <CustomHeading headingText={headingText} size={size} href={href} />
-            <Typography variant="body2" btnClr="text.secondary">
+            <Typography variant="body2" sx={{ color: '#54595F', fontSize: (icon ? '17px' : '15px') }}>
                Lizards are a widespread group of squamate reptiles, with over 6,000
-               species, ranging across all continents except Antarctica
+               species, ranging across all continents except Antarctica.
+               Lizards are a widespread group of squamate reptiles, with over 6,000
             </Typography>
          </ContentCard>
          <CardActions sx={{ paddingLeft: '15px', paddingBottom: '20px' }}>
@@ -83,15 +84,20 @@ const ImgLink = styled(Link)(() => ({
 }))
 const ImgCard = styled(CardMedia)(() => ({
    height: '250px',
-
-
-
 }))
 const ContentCard = styled(CardContent)(({ icon }) => ({
-   padding: (icon ? '10px 20px 65px 20px' : ''),
+   padding: (icon ? '10px 20px' : ''),
+   letterSpacing: 5,
    ':hover': {
       '.css-l231mk-MuiTypography-root': {
+         transition: (icon ? 'all .4s' : ''),
          color: (icon ? '#fcb900' : ''),
+
+      },
+      '.css-1if0mqq-MuiSvgIcon-root': {
+         color: '#000',
+         transition: (icon ? 'all .4s' : ''),
+
       }
    }
 

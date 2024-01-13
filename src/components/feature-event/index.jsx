@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, Container } from "@mui/material";
 import EventImg1 from '../../assets/feature-event-img/img1.jpg';
 import EventIm2 from '../../assets/feature-event-img/img2.jpg';
 import EventImg3 from '../../assets/feature-event-img/img3.jpg';
@@ -7,7 +7,7 @@ import CustomButton from "../ui/custom-button";
 import CustomHeading from '../ui/custom-heading';
 
 const FeatureEvent = () => (
-   <Box sx={{}}>
+   <Container >
       <Box textAlign={'center'} padding={'20px 0px'}><CustomHeading
          headingText={'Featured Events'}
          size={'x-lg'}
@@ -52,7 +52,7 @@ const FeatureEvent = () => (
          btnText={'See All Events'}
          color='white'
       /></Box>
-   </Box >
+   </Container >
 )
 
 export default FeatureEvent
