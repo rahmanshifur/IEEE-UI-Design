@@ -1,57 +1,20 @@
-import ArrowForwardIosSharpIcon from '@mui/icons-material/ArrowForwardIosSharp';
-import MuiAccordion from '@mui/material/Accordion';
-import MuiAccordionDetails from '@mui/material/AccordionDetails';
-import MuiAccordionSummary from '@mui/material/AccordionSummary';
 import * as React from 'react';
+import Accordions from '../accordion';
 import CustomButton from "../ui/custom-button";
 import CustomHeading from "../ui/custom-heading";
 const { Box, Typography, Grid, Container, styled } = require("@mui/material")
 
 
-const Accordion = styled((props) => (
-   <MuiAccordion disableGutters elevation={0} square {...props} />
-))(({ theme }) => ({
-   border: `1px solid ${theme.palette.divider}`,
-   '&:not(:last-child)': {
-      borderBottom: 0,
-   },
-   '&::before': {
-      display: 'none',
-   },
-}));
-
-const AccordionSummary = styled((props) => (
-   <MuiAccordionSummary 
-      expandIcon={<ArrowForwardIosSharpIcon sx={{ fontSize: '0.9rem' }} />}
-      {...props}
-   />
-))(({ theme }) => ({
-   minHeight:'30px' ,
-   flexDirection: 'row-reverse',
-   '& .MuiAccordionSummary-expandIconWrapper.Mui-expanded': {
-      transform: 'rotate(90deg)',
-   },
-   '& .MuiAccordionSummary-content': {
-      marginLeft: theme.spacing(1),
-      margin:'0',
-   },
-}));
-
-const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
-   padding: theme.spacing(2),
-   borderTop: '1px solid rgba(0, 0, 0, .125)',
-   color:'#fff',
-   
-}));
 
 
 const FAQSection = () => {
 
-   const [expanded, setExpanded] = React.useState('panel1');
+   const [expanded, setExpanded] = React.useState(false);
 
-   const handleChange = (panel) => (event, newExpanded) => {
-      setExpanded(newExpanded ? panel : false);
+   const handleChange = (panel) => (event, isExpanded) => {
+      setExpanded(isExpanded ? panel : false);
    };
+
    return (
       <BoxWrapper >
          <Container>
@@ -73,26 +36,32 @@ const FAQSection = () => {
                      size={'lg'}
                      underline={'sm-underline'}
                   />
-                  <Box>
-                     <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')} sx={{ background: 'transparent', border: 'none' }}>
-                        <AccordionSummary aria-controls="panel1d-content" id="panel1d-header" sx={{ background: '#fff', borderRadius: '5px'}}>
-                           <Typography>Collapsible Group Item #1</Typography>
-                        </AccordionSummary>
-                        <AccordionDetails>
-                           <Typography>
-                              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                              malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum dolor
-                              sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-                              sit amet blandit leo lobortis eget.
-                           </Typography>
-                        </AccordionDetails>
-                     </Accordion>
-                  </Box>
-                  <CustomButton
-                     btnText={'Ask a Question'}
-                     color={'black'}
-                     href={'##'}
+                  <Accordions
+                     expanded={expanded === 'panel1'}
+                     handleChange={handleChange('panel1')}
+                     AccorHeading={'What is INSB?'}
+                     AccrText='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+                  malesuada lacus ex, sit amet blandit leo lobortis eget..'
                   />
+                  <Accordions
+                     expanded={expanded === 'panel2'}
+                     handleChange={handleChange('panel2')}
+                     AccorHeading={'What is INSB?'}
+                     AccrText='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+                  malesuada lacus ex, sit amet blandit leo lobortis eget..' />
+                  <Accordions
+                     expanded={expanded === 'panel3'}
+                     handleChange={handleChange('panel3')}
+                     AccorHeading={'What is INSB?'}
+                     AccrText='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+                  malesuada lacus ex, sit amet blandit leo lobortis eget..' />
+                  <Box padding={'10px 0px'}>
+                     <CustomButton
+                        btnText={'See other questions'}
+                        color={'white'}
+                        href={'##'}
+                     />
+                  </Box>
                </RightGrid>
             </Grid>
          </Container>
@@ -118,8 +87,9 @@ const LeftGrid = styled((Grid))(() => ({
    }
 }))
 const RightGrid = styled((Grid))(() => ({
+   padding: '10px',
    '.headding': {
-      color: '#fff'
+      color: '#fff',
    }
 }))
 
