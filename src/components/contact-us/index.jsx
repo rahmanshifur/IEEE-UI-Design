@@ -1,5 +1,5 @@
 import styled from "@emotion/styled"
-import { Box, Button, Container, Grid, Typography, } from "@mui/material"
+import { Box, Container, Grid, Typography } from "@mui/material"
 import CustomButton from "../ui/custom-button"
 
 const ContactCopmonent = () => {
@@ -7,55 +7,47 @@ const ContactCopmonent = () => {
         <Box sx={{ py: '40px', }}>
 
             <Container>
-                <Grid container spacing={4}>
-                    <Grid item xs={12} md={6} lg={6}>
-                        <Contact> Contact us <ConatctSpan>if you would like to know more about us</ConatctSpan> </Contact>
+                <Grid container >
+                    <Grid item xs={12} md={6} lg={6} sx={{ display: "inline-block" }}>
+                        <Typography sx={{
+                            display: 'inline-block',
+                            fontSize: '36px',
+                            fontWeight: '700',
+                        }}>
+                            <span style={{ color: '#ffcc03', }}> Contact us </span> <span style={{ color: '#000', }}>if you would like to know more about us</span>
+                        </Typography>
                     </Grid>
-                    <RightGrid item xs={12} md={6} lg={6}>
-                       <Box>
-                       <CustomButton
-                            btnText="Contact us "
-                            color='black'
-                        />
-                       </Box>
-                    </RightGrid>
+                    <Grid item xs={12} md={6} lg={6} sx={{ textAlign: 'center' }}>
+                        <RightSection>
+                            <CustomButton
+                                btnText="Contact us "
+                                color='black'
+                                href='##'
+                            />
+                        </RightSection>
+                    </Grid>
                 </Grid>
             </Container>
-
         </Box>
     )
 }
 export default ContactCopmonent
 
-const Contact = styled(Typography)(() => ({
-    color: '#ffcc03',
-    fontSize: '36px',
-    fontWeight: '700',
-    ':hover': {
-        color: '#000'
-    }
-}))
-const ConatctSpan = styled('span')(() => ({
-    color: '#000',
-    fontSize: '36px',
-    fontWeight: '700',
-}))
 
-const RightGrid = styled(Grid)(() => ({
-    
-    textAlign: 'center',
-    ':hover': {
-       
-        '.custom-button': {
-            color: '#fff',
-            backgroundColor: '#000',
-        }
-    },
+const RightSection = styled(Grid)(() => ({
+    display: 'inline-block',
     '.custom-button': {
         padding: '22px 45px',
         borderRadius: '50px',
         fontSize: '20px',
         fontWeight: '700',
 
+    },
+    ':hover': {
+
+        '.custom-button': {
+            color: '#fff',
+            backgroundColor: '#000',
+        }
     }
 }))
