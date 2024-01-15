@@ -5,7 +5,6 @@ import CustomButton from "../ui/custom-button"
 const ContactCopmonent = () => {
     return (
         <Box sx={{ py: '40px', }}>
-
             <Container>
                 <Grid container >
                     <Grid item xs={12} md={6} lg={6} sx={{ display: "inline-block" }}>
@@ -20,7 +19,7 @@ const ContactCopmonent = () => {
                     <Grid item xs={12} md={6} lg={6} sx={{ textAlign: 'center' }}>
                         <RightSection>
                             <CustomButton
-                                btnText="Contact us "
+                                btnText="Contact us"
                                 color='black'
                                 href='##'
                             />
@@ -33,7 +32,6 @@ const ContactCopmonent = () => {
 }
 export default ContactCopmonent
 
-
 const RightSection = styled(Grid)(() => ({
     display: 'inline-block',
     '.custom-button': {
@@ -41,10 +39,8 @@ const RightSection = styled(Grid)(() => ({
         borderRadius: '50px',
         fontSize: '20px',
         fontWeight: '700',
-
     },
     ':hover': {
-
         '.custom-button': {
             color: '#fff',
             backgroundColor: '#000',
