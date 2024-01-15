@@ -19,7 +19,7 @@ const FAQSection = () => {
       <BoxWrapper >
          <Container>
             <Grid container columns={12}>
-               <LeftGrid item lg={6} textAlign={'center'}>
+               <LeftGrid item lg={6} md={6} sm={12} textAlign={'center'}>
                   <CustomHeading
                      headingText={'Do you have any question?'}
                      size={'xx-lg'}
@@ -30,7 +30,7 @@ const FAQSection = () => {
                      href={'##'}
                   />
                </LeftGrid>
-               <RightGrid item lg={6}>
+               <RightGrid item lg={6} md={6} sm={12}>
                   <CustomHeading
                      headingText={'FAQ'}
                      size={'lg'}

@@ -1,6 +1,6 @@
-import { Box, Container } from "@mui/material";
+import { Box, Container, Grid } from "@mui/material";
 import EventImg1 from '../../assets/feature-event-img/img1.jpg';
-import EventIm2 from '../../assets/feature-event-img/img2.jpg';
+import EventImg2 from '../../assets/feature-event-img/img2.jpg';
 import EventImg3 from '../../assets/feature-event-img/img3.jpg';
 import CardItem from "../reuseable/card";
 import CustomButton from "../ui/custom-button";
@@ -13,8 +13,19 @@ const FeatureEvent = () => (
          size={'x-lg'}
          underline={'lg-underline'}
       /></Box>
-      <Box sx={{ display: 'flex' }}>
-         <Box sx={{ borderRadius: '15px', padding: '0px 20px' }}>
+      <Grid container columnSpacing={{ md: 2, sm: 2, lg: 3, }} rowSpacing={{ md: 2, sm: 2, xs: 3, lg: 3 }} columns={12} >
+         <Grid className='gridItems' item xs={12} sm={6} md={4} lg={4}>
+            <CardItem
+               headingText={'3D Point Cloud Object Recognition'}
+               size={'md'}
+               img={EventImg2}
+               btnClr='white'
+               btnSize='md'
+               btnBgClr={'primary'}
+               btnHref={'/d'}
+            />
+         </Grid>
+         <Grid className='gridItems' item xs={12} sm={6} md={4} lg={4}>
             <CardItem
                headingText={'3D Point Cloud Object Recognition'}
                size={'md'}
@@ -24,19 +35,8 @@ const FeatureEvent = () => (
                btnBgClr={'primary'}
                btnHref={'/d'}
             />
-         </Box>
-         <Box sx={{ borderRadius: '15px', padding: '0px 20px' }}>
-            <CardItem
-               headingText={'3D Point Cloud Object Recognition'}
-               size={'md'}
-               img={EventIm2}
-               btnClr='white'
-               btnSize='md'
-               btnBgClr={'primary'}
-               btnHref={'/d'}
-            />
-         </Box>
-         <Box sx={{ borderRadius: '15px', padding: '0px 20px' }}>
+         </Grid>
+         <Grid className='gridItems' item xs={12} sm={6} md={4} lg={4}>
             <CardItem
                headingText={'3D Point Cloud Object Recognition'}
                size={'md'}
@@ -46,8 +46,8 @@ const FeatureEvent = () => (
                btnBgClr={'primary'}
                btnHref={'/d'}
             />
-         </Box>
-      </Box>
+         </Grid>
+      </Grid>
       <Box sx={{ textAlign: 'center', padding: '50px 0px 0px 0px' }}><CustomButton
          btnText={'See All Events'}
          color='white'

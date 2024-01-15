@@ -3,7 +3,7 @@ import DraftsIcon from '@mui/icons-material/Drafts';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import HomeIcon from '@mui/icons-material/Home';
 import InstagramIcon from '@mui/icons-material/Instagram';
-import { Box, Container, styled, Grid, Typography } from "@mui/material";
+import { Box, Container, Grid, Typography, styled } from "@mui/material";
 import FooterLogo2 from '../../../assets/footer-logo/INSB.png';
 import FooterLogo1 from '../../../assets/footer-logo/ieee-mb-blue.png';
 import FooterInfo from './footer-info';
@@ -92,9 +92,9 @@ const Footer = () => {
                   </Grid>
 
 
-                  <Grid item lg={4} md={3} sm={16} xs={16} sx={{ "@media (max-width:767px)": { textAlign: 'center' } }} >
+                  <Grid item lg={4} md={16} sm={16} xs={16} sx={{ "@media (max-width:767px)": { textAlign: 'center', justifyContent: 'center' } }} >
                      <Typography fontWeight={'bold'} fontSize={'25px'} color={'#FFF'}>Flolow Us :</Typography>
-                     <Box sx={{ "@media (max-width:767px)": { textAlign: 'center' } }}>
+                     <Box>
                         <Box sx={{ color: '#FFF', display: '', padding: '5px 5px 5px 0px', }}>
                            <DraftsIcon sx={{ background: '#5F5F5F', paddingLeft: '0px', padding: '6px', borderRadius: '5px', marginRight: '6px' }} fontSize='medium' />
                            <AvTimerIcon sx={{ background: '#5F5F5F', padding: '6px', borderRadius: '5px', marginRight: '6px' }} fontSize='medium' />
@@ -103,9 +103,9 @@ const Footer = () => {
                            <InstagramIcon sx={{ background: '#5F5F5F', padding: '6px', borderRadius: '5px' }} fontSize='medium' />
 
                         </Box>
-                        <Box sx={{color:'#fff' , }}>
-                           <Typography sx={{display:'flex', alignItems:'center'}}><span><DraftsIcon /></span><span>abcd@gmail.com</span></Typography>
-                           <Typography><span><AvTimerIcon /></span><span>Last Updated: 31 march 2021</span></Typography>
+                        <Box sx={{ color: '#fff', }}>
+                           <Typography sx={{ display: 'flex', alignItems: 'center' }}><DraftsIcon fontSize='small' /><span>abcd@gmail.com</span></Typography>
+                           <Typography sx={{ display: 'flex', alignItems: 'center' }}><AvTimerIcon fontSize='small' /><span>Last Updated: 31 march 2021</span></Typography>
                         </Box>
                      </Box>
                   </Grid>
