@@ -12,10 +12,12 @@ import CustomHeading from '../ui/custom-heading';
 const CardItem = ({ headingText, size, href, img, btnClr, btnSize, btnBgClr, btnHref, icon }) => {
    return (
       <CardItems
+         className='cardItem'
          cardsx={{ icon, btnSize }}>
          {img &&
             <ImgLink href={href ? href : ''}>
-               <ImgCard
+               <CardMedia
+                  sx={{ height: '250px' }}
                   image={img}
                />
                {href && <HoverArrowIcon className='hoverIcon'>
@@ -34,13 +36,13 @@ const CardItem = ({ headingText, size, href, img, btnClr, btnSize, btnBgClr, btn
                Lizards are a widespread group of squamate reptiles, with over 6,000
             </Typography>
          </ContentCard>
-         <CardActions sx={{ paddingLeft: '15px', paddingBottom: '20px' }}>
-            {btnHref &&
+         {btnHref &&
+            <CardActions sx={{ paddingLeft: '15px', paddingBottom: '20px' }}>
                <BtnCard
                   href={btnHref}
                   size={'small'}
-                  btnClr={{ btnClr, btnSize, btnBgClr }}>Read More</BtnCard>}
-         </CardActions>
+                  btnClr={{ btnClr, btnSize, btnBgClr }}>Read More</BtnCard>
+            </CardActions>}
 
       </CardItems >
    )
@@ -49,10 +51,10 @@ const CardItem = ({ headingText, size, href, img, btnClr, btnSize, btnBgClr, btn
 export default CardItem
 
 const CardItems = styled(Card)(({ cardsx: { icon, btnSize } }) => ({
-   maxWidth: 345,
    textAlign: (icon ? 'center' : ''),
+   border: (icon ? "2px solid #00000047" : ''),
    borderRadius: (btnSize ? '15px' : ''),
-   boxShadow: (btnSize ? '0px 0px 10px 0px rgba(0,0,0,0.5)' : ''),
+   boxShadow: (btnSize ? '0px 0px 10px 0px rgba(0,0,0,0.5)' : (icon ? 'none' : '')),
 
 }))
 const HoverArrowIcon = styled(Box)(({ }) => ({
@@ -66,7 +68,6 @@ const HoverArrowIcon = styled(Box)(({ }) => ({
    overflow: 'hidden',
    top: '0',
    left: '0',
-   // right: '0',
    bottom: '0',
    position: 'absolute',
    opacity: '0',
@@ -81,9 +82,6 @@ const ImgLink = styled(Link)(() => ({
          width: "100%",
       }
    },
-}))
-const ImgCard = styled(CardMedia)(() => ({
-   height: '250px',
 }))
 const ContentCard = styled(CardContent)(({ icon }) => ({
    padding: (icon ? '10px 20px' : ''),

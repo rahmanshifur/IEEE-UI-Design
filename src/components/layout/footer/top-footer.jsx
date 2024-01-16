@@ -1,4 +1,4 @@
-import { Box, Container, Link, styled } from "@mui/material"
+import { Box, Container, Grid, Link, styled } from "@mui/material"
 
 
 const TopFooter = () => {
@@ -29,21 +29,25 @@ const TopFooter = () => {
    return (
       <Box bgcolor={'#0088B8'} padding={'22px'} fontSize={'16px'}>
          <Container>
-            <Box sx={{ display: 'flex', justifyContent: "space-between", alignItems: 'center' }} >
-               <Box item lg={6} >
-                  {Items.map((item) =>
-                     <LinkItems href={item.url}>
-                        {item.name}
-                     </LinkItems>
-                  )}
-               </Box>
-               <Box item lg={6} >
-                  <span style={{ color: '#fff' }}>© Copyright 2021 INSB – All rights reserved. Developed by</span>
-                  <Link href='#' sx={{ color: '#FFC936', textDecoration: 'none', fontWeight: '600', }}> INSB Web Development Team</Link>
-               </Box>
-            </Box>
+            <Grid container columns={12} spacing={2} textAlign={'center'}>
+               <Grid item lg={5} md={12} sm={12}>
+                  <Box>
+                     {Items.map((item) =>
+                        <LinkItems href={item.url}>
+                           {item.name}
+                        </LinkItems>
+                     )}
+                  </Box>
+               </Grid>
+               <Grid item lg={7} md={12} sm={12} >
+                  <Box>
+                     <span style={{ color: '#fff' }}>© Copyright 2021 INSB – All rights reserved. Developed by</span>
+                     <Link href='#' sx={{ color: '#FFC936', textDecoration: 'none', fontWeight: '600', }}> INSB Web Development Team</Link>
+                  </Box>
+               </Grid>
+            </Grid>
          </Container>
-      </Box>
+      </Box >
    )
 }
 
