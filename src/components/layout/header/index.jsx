@@ -13,7 +13,7 @@ const Menu = [
       submenu: [
          {
             name: 'Events',
-            url: '/event'
+            url: '/events'
          },
          {
             name: 'News',
@@ -233,7 +233,7 @@ const Submenu = styled('ul')(() => ({
 
 }))
 const SubmenuList = styled('li')(() => ({
-   borderBottom: '1px solid #f2f0f0',
+   borderBottom: '1px solid # f2f0f0',
    ':hover': {
       background: '#ffc938',
    },

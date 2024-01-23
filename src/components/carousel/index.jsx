@@ -33,12 +33,12 @@ const CarouselSlider = () => {
       <CarouselBox className='aaa'>
          {
             items.map((item, i) =>
-               <BoxWrapper className='bbb' key={i}>
+               <BoxWrapper key={i}>
                   <Box>
                      <img src={item.image} alt="" width={'100%'} height={'715.244px'} />
                   </Box>
-                  <Content className='ccc'>
-                     <ContentItem className='dd'>
+                  <Content>
+                     <ContentItem>
                         <Box sx={{ '.headding': { color: '#fff' } }}>{item.subHeading}</Box>
                         <Box>{item.headding}</Box>
                         <Box>{item.description}</Box>

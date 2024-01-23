@@ -2,7 +2,7 @@
 import CastForEducationIcon from '@mui/icons-material/CastForEducation';
 import { Box, Container, styled } from "@mui/material";
 import CardItem from "../reuseable/card";
-import CustomButton from "../ui/custom-button";
+import CustomButton from '../ui/custom-button';
 import CustomHeading from '../ui/custom-heading';
 
 const WhatWeDo = () => (

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const CustomButton = (props) => {
 
    return (
-      <BtnLink className="custom-button"  to={props.href ? props.href : ''} props={props}>{props.btnText}</BtnLink >
+      <BtnLink className="custom-button" onClick={props.onClick} to={props.href ? props.href : ''} props={props}>{props.btnText}</BtnLink >
    )
 }
 
